@@ -12,6 +12,18 @@ function getToDo() {
 
 }
 
+function enterToDo(event){
+    if(event.keyCode === 13){
+        getToDo()
+    }
+
+
+}
+
+
+
+
+
 
 function removeToDo(event){
     
