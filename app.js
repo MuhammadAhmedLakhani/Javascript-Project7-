@@ -7,7 +7,6 @@ function getToDo() {
 
     value = input.value.trim()
 
-    console.log(value,"value")
 
     if(value === ""){
         alert("empty")
@@ -17,26 +16,31 @@ function getToDo() {
     
 
     list = document.getElementById("list")
-    list.innerHTML += `<li > <input  value = ${value} disabled  > <button id = "delete" onclick = "removeToDo(event)">Delete</button><button onclick="editToDo(event)"> Edit </button></li>  `
+    list.innerHTML += `<li ><input onclick = "checkedToDo(event)" type = 
+    "checkbox"> <input  value = ${value} disabled  > <button id = "delete" onclick = "removeToDo(event)">Delete</button><button onclick="editToDo(event)"> Edit </button></li>  `
 
     input.value = ""
 
 }
 
 function editToDo(event) {
-    var edit = event.target.parentNode.childNodes[1]
+    
+    var edit = event.target.parentNode.childNodes[2]
     edit.disabled = false
+    edit.setAttribute("class","editInput")
     edit.focus()
     event.target.innerHTML = "Update"
 
     event.target.setAttribute("onclick", "updateToDo(event)")
 
+
 }
 
 function updateToDo(event) {
-    var edit = event.target.parentNode.childNodes[1];
+    var edit = event.target.parentNode.childNodes[2];
     var updatedValue = edit.value
-        
+    edit.setAttribute("class","")
+
     edit.disabled = true
     
     event.target.innerHTML = "Edit"
@@ -54,7 +58,16 @@ function deleteAllToDo(){
 }
 
 
+function checkedToDo(event){
+    var inputLine;
+    if(event.target.checked === true){
+        inputLine = event.target.parentNode.childNodes[2]
+        inputLine.setAttribute("class","linethough")
+        console.log(inputLine)
 
+    }
+    console.log("Checked")
+}
 
 
 function enterToDo(event) {
