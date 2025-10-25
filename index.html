@@ -1,25 +1,38 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-        
+
     <div>
-        <div>
+        <div class="container">
             <div>
-                <input type="text" name="" id="input" placeholder="Enter your daily tasks here" onkeydown="enterToDo(event)"  >
+                <input type="text" name="" id="input" placeholder="Enter your daily tasks here"
+                    onkeydown="enterToDo(event)">
                 <button onclick="getToDo()">Add ToDo</button>
-                <button onclick="deleteAllToDo()">Delete all ToDo</button>
+                <button onclick="deleteAllToDo()">Delete All</button>
                 <ul id="list">
-                    
+
                 </ul>
             </div>
+            <div class="dashboard">
+                <div class="completed" id = "complete">
+                    <h4>Completed Tasks</h4>
+                    <h6>0</h6>
+                </div>
+                <div class="pending">
+                    <h4>Pending Tasks</h4>
+                    <h6>10</h6>
+                </div>
 
-            
+            </div>
+
         </div>
     </div>
 
@@ -30,4 +43,5 @@
 
     <script src="app.js"></script>
 </body>
+
 </html>

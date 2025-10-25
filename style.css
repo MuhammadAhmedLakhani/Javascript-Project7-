@@ -17,4 +17,25 @@
 
 .linethough {
     text-decoration:line-through ;
+}   
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.dashboard {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.completed > h4 {
+    margin: 0px;
+}
+.pending > h4 {
+    margin: 0px;
 }

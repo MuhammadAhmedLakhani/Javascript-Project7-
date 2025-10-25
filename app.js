@@ -63,7 +63,8 @@ function checkedToDo(event){
     if(event.target.checked === true){
         inputLine = event.target.parentNode.childNodes[2]
         inputLine.setAttribute("class","linethough")
-        console.log(inputLine)
+        console.log("completed")
+        completeCounter()
 
     }
     console.log("Checked")
@@ -88,4 +89,12 @@ function removeToDo(event) {
     event.target.parentNode.remove()
 
 
+}
+
+
+var count = 0
+function completeCounter(){
+    var complete = document.getElementById("complete");
+    count++
+    complete.childNodes[3].innerHTML = `<h3>${count}</h3>`
 }
