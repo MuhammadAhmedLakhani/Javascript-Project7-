@@ -57,6 +57,7 @@ body {
 }
 
 #input {
+
     padding: 7px;
     border-radius: 15px;
     color: rgb(1, 36, 57);
@@ -108,7 +109,7 @@ body {
 
 .todo {
     border: none;
-    width: 60%;
+    width: 73%;
     font-size: 45px;
     background-color: #91bac6 !important;
     color: #fff;
@@ -168,6 +169,68 @@ body {
 
 }
 
-.checkbox-old:checked ~ .checkbox-new::after {
+.checkbox-old:checked~.checkbox-new::after {
     display: block;
+}
+
+.container {
+    display: none;
+}
+
+.title {
+    text-align: center;
+}
+
+.title span {
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #454545;
+    border-radius: 50%;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+.open {
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    right: 40px;
+    bottom: 100px;
+    background-color: #454545 !important;
+    color: #fff;
+    font-size: 60px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.heading {
+    width: 40vw;
+    height: 30vh;
+    background: linear-gradient(to bottom right, #4F709C, #213555);
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+}
+
+.start {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQROLdydvLc2RnrANwK_SE3vxvmem5jjc77NA&s");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0.4);
+    /* Blend the color and image */
+    background-blend-mode: lighten; 
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }

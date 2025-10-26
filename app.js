@@ -136,3 +136,12 @@ function pendingCounter() {
     console.log(pending, "pending")
     pendingE.childNodes[3].innerHTML = `<h3>${pending}</h3>`
 }
+
+var open  = document.querySelector('.open')
+
+open.addEventListener("click",function(){
+    document.querySelector('.container').style.display = 'flex' 
+    document.querySelector('.start').style.display = 'none' 
+
+
+})
