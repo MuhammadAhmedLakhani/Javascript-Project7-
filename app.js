@@ -17,8 +17,8 @@ function getToDo() {
 
 
     list = document.getElementById("list")
-    list.innerHTML += `<li ><input onclick = "checkedToDo(event)" type = 
-    "checkbox"> <input  value = ${value} disabled  > <button id = "delete" onclick = "removeToDo(event)">Delete</button><button onclick="editToDo(event)"> Edit </button></li>  `
+    list.innerHTML += `<li > <label class = "check-container"> <input onclick = "checkedToDo(event)" type = 
+    "checkbox" class = "checkbox-old"><span class = "checkbox-new"></span>  <input  value = ${value} disabled class = "todo" > <button id = "delete" onclick = "removeToDo(event)" class = "button1"  >Delete</button ><button onclick="editToDo(event)" class = "button1"> Edit </button></label></li>  `
     total++
     console.log(total, "total from get")
     pendingCounter()
@@ -29,9 +29,10 @@ function getToDo() {
 
 function editToDo(event) {
 
-    var edit = event.target.parentNode.childNodes[2]
+    var edit = event.target.parentNode.childNodes[4]
+    console.log(edit)
     edit.disabled = false
-    edit.setAttribute("class", "editInput")
+    edit.setAttribute("class", "editInput todo")
     edit.focus()
     event.target.innerHTML = "Update"
 
@@ -41,9 +42,9 @@ function editToDo(event) {
 }
 
 function updateToDo(event) {
-    var edit = event.target.parentNode.childNodes[2];
+    var edit = event.target.parentNode.childNodes[4];
     var updatedValue = edit.value
-    edit.setAttribute("class", "")
+    edit.setAttribute("class", "todo")
 
     edit.disabled = true
 
@@ -66,14 +67,16 @@ function checkedToDo(event) {
     var inputLine;
     if (event.target.checked === true) {
         event.target.disabled = true
-        inputLine = event.target.parentNode.childNodes[2]
-
-        inputLine.setAttribute("class", "linethough")
+        inputLine = event.target.parentNode.childNodes[4]
+        console.log(inputLine,"target")
+        var static = event.target.parentNode.childNodes[7]
+        inputLine.setAttribute("class", "linethough todo ")
+        inputLine.setAttribute("id", "checkbox")
         console.log("completed")
         completeCounter()
         var pendingE = document.getElementById("pendingC");
         pendingE.childNodes[3].innerHTML = `<h3>${--pending}</h3>`
-
+        static.disabled = true
 
     }
 }
